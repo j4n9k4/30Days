@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">30Days</string>
+    <string name="description_1">You just have to take a deep breath, relax and let the game come to you.</string>
+    <string name="description_2">Your mind will answer most questions if you learn to relax and wait for the answer.</string>
+    <string name="description_3">It is nice finding that place where you can just go and relax.</string>
+    <string name="description_4">I do not really think about the degree of difficulty or the possibility of making a mistake</string>
+    <string name="description_5"> I just try to relax and let my preparation and training take over</string>
+    <string name="description_6">The time to relax is when you do not have time for it.</string>
+    <string name="description_7">It is good to reflect on life and take a step back and sit and relax and do something else.</string>
+    <string name="description_8">Art raises its head where creeds relax.</string>
+    <string name="description_9">For me, it is important to relax and concentrate on what I want to do.</string>
+    <string name="description_10">I like to have quiet evenings and relax.</string>
+    <string name="description_11">Sunday is the core of our civilisation, dedicated to thought and reverence.</string>
+    <string name="description_12">Act the way that you want to feel</string>
+    <string name="description_13">There is more to life than increasing its speed</string>
+    <string name="description_14">Tension is who you think you should be. Relaxation is who you are.</string>
+    <string name="description_15">Our anxiety does not come from thinking about the future, but from wanting to control it</string>
+    <string name="description_16">It’s not stress that kills us, it is our reaction to it</string>
 </resources>
