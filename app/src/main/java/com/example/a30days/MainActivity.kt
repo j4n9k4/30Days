@@ -6,10 +6,15 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.sizeIn
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -26,6 +31,7 @@ import com.example.a30days.data.Items
 import com.example.a30days.ui.theme._30DaysTheme
 import androidx.compose.ui.unit.dp
 import androidx.core.app.NotificationCompat.Style
+import androidx.compose.foundation.lazy.items
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +39,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             _30DaysTheme {
-
+                DayApp()
             }
         }
     }
@@ -45,7 +51,9 @@ fun DayItem(
     modifier: Modifier = Modifier)
 {
     Card(
-        modifier = modifier.height(450.dp)
+        modifier = modifier
+            .height(450.dp)
+            .padding(bottom = 20.dp)
     ) {
         Column(
 
@@ -60,17 +68,36 @@ fun DayItem(
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .weight(1f)
+                    .fillMaxWidth()
             )
         }
     }
 }
 
+@Composable
+fun DayItemList(
+    contentPadding: PaddingValues,
+
+)
+{
+    LazyColumn(contentPadding = contentPadding) {
+       items(Items.itemList){item ->
+           DayItem(item)
+       }
+    }
+}
+@Composable
+fun DayApp()
+{
+    Scaffold { padding ->
+        DayItemList(contentPadding = padding)
+    }
+}
 @Preview(showSystemUi = true)
 @Composable
 fun DayAppPreview()
 {
     _30DaysTheme {
-        DayItem(Items.itemList[0],Modifier.padding(top = 50.dp)
-        )
+            DayApp()
     }
 }
